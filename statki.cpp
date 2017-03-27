@@ -12,6 +12,20 @@ statki::statki(QWidget *parent):
     connected=false;
 }
 
+
+
+void statki::doCreateRoomDialog(){
+
+}
+
+void statki::pushAction(int id){
+    emit showStatus("Wysłano akcję");
+}
+
+void statki::refresh(){
+    emit showStatus("Refreshed");
+}
+
 QString statki::gAdress(){return adress;}
 int     statki::gPort(){return port;}
 int     statki::gRefresh(){return refresh;}
@@ -59,57 +73,3 @@ void statki::disconnect(){
     emit changeConnect();
     emit showStatus("Rozłączono z serwerem");
 }
-void statki::getstatus(){
-    emit showStatus("Pobrano status");
-}
-
-
-void statki::getroomlist(){
-
-}
-
-void statki::createroom(){
-
-}
-
-void statki::joinroom(){
-
-}
-
-void statki::sendAction(int x,int y){
-
-}
-
-void statki::refreshmap(){
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

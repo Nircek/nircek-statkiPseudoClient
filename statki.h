@@ -19,6 +19,7 @@ private:
     int ms;
 public slots:
     void doUstawieniaDialog();
+    void doCreateRoomDialog();
 signals:
     void changeRefresh();
     void changeConnect();
@@ -29,19 +30,14 @@ public slots:
     void showStatuss(QString,int=0);
 public:
     QString gAdress();
-    int gPort();
-    int gRefresh();
-    bool gConnected();
-    int gFps();
-    int gMs();
+    int     gPort();
+    int     gRefresh();
+    bool    gConnected();
+    int     gFps();
+    int     gMs();
 
-    void getstatus();
-    void getroomlist();
-    void createroom();
-    void joinroom();
-
-    void sendAction(int x,int y);
-    void refreshmap();
+    void pushAction(int id);
+    void refresh();
 
 
 };
