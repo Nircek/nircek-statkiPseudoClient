@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ustawienia</class>
+ <widget class="QDialog" name="ustawienia">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>258</width>
+    <height>159</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="GruupBox1">
+     <property name="title">
+      <string>Nazwa i port serwera</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLineEdit" name="adress"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="port">
+        <property name="maximum">
+         <number>65535</number>
+        </property>
+        <property name="value">
+         <number>64206</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="GroupBox2">
+     <property name="title">
+      <string>Częstotliwość odświerzania</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item alignment="Qt::AlignRight">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>czas [s]</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="refresh">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>120</number>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignRight">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>płynność</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="fps">
+        <item>
+         <property name="text">
+          <string>0.5 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>5 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>8 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>20 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>33,(3) fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>40 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>50 fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>66.(6) fps</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>100 fps</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ustawienia</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ustawienia</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
