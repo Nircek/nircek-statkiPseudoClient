@@ -52,7 +52,7 @@ void MainWindow::changedLayout(){
 }
 
 void MainWindow::refresh(){
-    if(s->connected){
+    if(s->gConnected()){
         s->getstatus();
         ui->progressBar->setValue(0);
     }
@@ -60,17 +60,17 @@ void MainWindow::refresh(){
 
 void MainWindow::changedRefresh(){
     ui->progressBar->setValue(0);
-    ui->progressBar->setMaximum((s->refresh*(2*1000/s->ms))/2);
-    if((s->refresh==1)&&s->connected)ui->progressBar->setMaximum(0);
+    ui->progressBar->setMaximum((s->gRefresh()*(2*1000/s->gMs()))/2);
+    if((s->gRefresh()==1)&&s->gConnected())ui->progressBar->setMaximum(0);
     else changedConnect();
 }
 void MainWindow::changedConnect(){
-    ui->actionPo_cz->setEnabled(!s->connected);
-    ui->actionRoz_cz->setEnabled(s->connected);
-    if(s->connected){
+    ui->actionPo_cz->setEnabled(!s->gConnected());
+    ui->actionRoz_cz->setEnabled(s->gConnected());
+    if(s->gConnected()){
         timer->stop();
         ui->progressBar->setValue(0);
-        timer->start(s->ms);
+        timer->start(s->gMs());
         if(ui->progressBar->maximum()==1){ui->progressBar->setMaximum(0);timer->stop();timer->start(1000);};
     }else{
         timer->stop();
@@ -79,7 +79,7 @@ void MainWindow::changedConnect(){
     }
 }
 void MainWindow::everySecond(){
-    if(s->connected){
+    if(s->gConnected()){
         ui->progressBar->setValue(ui->progressBar->value()+1);
         if(ui->progressBar->value()>=ui->progressBar->maximum()){
             ui->progressBar->setValue(0);

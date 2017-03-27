@@ -11,6 +11,14 @@ statki::statki(QWidget *parent):
     ms=1000;
     connected=false;
 }
+
+QString statki::gAdress(){return adress;}
+int     statki::gPort(){return port;}
+int     statki::gRefresh(){return refresh;}
+bool    statki::gConnected(){return connected;}
+int     statki::gFps(){return fps;}
+int     statki::gMs(){return ms;}
+
 void statki::doUstawieniaDialog(){
     ustawienias us;
     us.adress=adress;

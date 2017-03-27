@@ -2,6 +2,7 @@
 #define STATKI_H
 
 #include <QObject>
+#include "qtppspc/qtppspc.h"
 
 class statki : public QObject
 {
@@ -9,6 +10,7 @@ class statki : public QObject
 public:
     statki(QWidget *parent=0);
     ~statki();
+private:
     QString adress;
     int port;
     int refresh;
@@ -26,6 +28,12 @@ public slots:
     void disconnect();
     void showStatuss(QString,int=0);
 public:
+    QString gAdress();
+    int gPort();
+    int gRefresh();
+    bool gConnected();
+    int gFps();
+    int gMs();
 
     void getstatus();
     void getroomlist();
