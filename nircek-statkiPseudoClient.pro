@@ -28,13 +28,17 @@ SOURCES += main.cpp\
     ustawienia.cpp \
     statki.cpp \
     ui.cpp \
-    uustawienia.cpp
+    uustawienia.cpp \
+    qtppspc/nircek-qteasyhttpclient/nircek-qteasyhttpclient.cpp \
+    qtppspc/qtppspc.cpp
 
 HEADERS  += mainwindow.h \
     ustawienia.h \
     statki.h \
     ui_testowa.h \
-    uustawienia.h
+    uustawienia.h \
+    qtppspc/nircek-qteasyhttpclient/nircek-qteasyhttpclient.h \
+    qtppspc/qtppspc.h
 
 FORMS    += \
     ustawienia.ui \
