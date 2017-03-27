@@ -31,26 +31,26 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionWyj_cie;
-    QAction *actionUstawienia;
-    QAction *actionPo_cz;
-    QAction *actionRoz_cz;
-    QAction *actionUUstawienia;
-    QAction *actionRozszerzanie;
-    QWidget *centralWidget;
-    QGridLayout *gridLayout_3;
-    QHBoxLayout *horizontalLayout;
-    QGridLayout *gridLayout[2];
+    QAction      *actionWyj_cie;
+    QAction      *actionUstawienia;
+    QAction      *actionPo_cz;
+    QAction      *actionRoz_cz;
+    QAction      *actionUUstawienia;
+    QAction      *actionRozszerzanie;
+    QWidget      *centralWidget;
+    QGridLayout  *refreshpasek;
+    QHBoxLayout  *horizontalLayout;
+    QGridLayout  *gridLayout[2];
 
     QPushButton **statki;
-    QSplitter *splitter;
+    QSplitter    *splitter;
     QProgressBar *progressBar;
-    QPushButton *refresh;
-    QMenuBar *menuBar;
-    QMenu *menuUstawienia;
-    QMenu *menuWyglad;
-    QMenu *menuWyj_cie;
-    QStatusBar *statusBar;
+    QPushButton  *refresh;
+    QMenuBar     *menuBar;
+    QMenu        *menuUstawienia;
+    QMenu        *menuWyglad;
+    QMenu        *menuWyj_cie;
+    QStatusBar   *statusBar;
 
 
     void setupUi(QMainWindow *MainWindow)
@@ -81,14 +81,16 @@ public:
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setLayoutDirection(Qt::LeftToRight);
-        gridLayout_3 = new QGridLayout(centralWidget);
-        gridLayout_3->setSpacing(0);
-        gridLayout_3->setContentsMargins(11, 11, 11, 11);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        refreshpasek = new QGridLayout(centralWidget);
+        refreshpasek->setSpacing(0);
+        refreshpasek->setContentsMargins(11, 11, 11, 11);
+        refreshpasek->setObjectName(QStringLiteral("refreshpasek"));
+        refreshpasek->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+
+
         gridLayout[0] = new QGridLayout();
         gridLayout[0]->setSpacing(0);
         gridLayout[0]->setObjectName(QStringLiteral("gridLayout0"));
@@ -96,6 +98,11 @@ public:
         gridLayout[1]->setSpacing(0);
         gridLayout[1]->setObjectName(QStringLiteral("gridLayout1"));
 
+
+
+        /****************************\/\/\*************************************/
+        //TODO:move this to statki with gridLayout0 and 1 pointer
+        //TODO:move/delete 203,204 lines
         statki = new QPushButton*[200];
 
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -114,10 +121,11 @@ public:
 
         horizontalLayout->addLayout(gridLayout[0]);
         horizontalLayout->addLayout(gridLayout[1]);
+        /****************************\/\/\*************************************/
 
 
-        gridLayout_3->addLayout(horizontalLayout, 1, 0, 1, 1);
 
+        refreshpasek->addLayout(horizontalLayout, 1, 0, 1, 1);
         splitter = new QSplitter(centralWidget);
         splitter->setObjectName(QStringLiteral("splitter"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Maximum);
@@ -145,7 +153,7 @@ public:
         refresh->setMaximumSize(QSize(70, 16777215));
         splitter->addWidget(refresh);
 
-        gridLayout_3->addWidget(splitter, 2, 0, 1, 1);
+        refreshpasek->addWidget(splitter, 2, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -170,7 +178,6 @@ public:
         statusBar->setContextMenuPolicy(Qt::DefaultContextMenu);
         statusBar->setSizeGripEnabled(true);
         MainWindow->setStatusBar(statusBar);
-
         menuBar->addAction(menuUstawienia->menuAction());
         menuBar->addAction(menuWyglad->menuAction());
         menuBar->addAction(menuWyj_cie->menuAction());

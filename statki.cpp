@@ -6,7 +6,7 @@ statki::statki(QWidget *parent):
     QObject(parent){
     adress="";
     port=0xFACE;
-    refresh=10.0;
+    irefresh=10.0;
     fps=2;
     ms=1000;
     connected=false;
@@ -28,7 +28,7 @@ void statki::refresh(){
 
 QString statki::gAdress(){return adress;}
 int     statki::gPort(){return port;}
-int     statki::gRefresh(){return refresh;}
+int     statki::gRefresh(){return irefresh;}
 bool    statki::gConnected(){return connected;}
 int     statki::gFps(){return fps;}
 int     statki::gMs(){return ms;}
@@ -37,7 +37,7 @@ void statki::doUstawieniaDialog(){
     ustawienias us;
     us.adress=adress;
     us.port=port;
-    us.refresh=refresh;
+    us.refresh=irefresh;
     us.fps=fps;
     us.ms=ms;
     ustawienia u;
@@ -50,8 +50,8 @@ void statki::doUstawieniaDialog(){
             port=us.port;
             disconnect();
         }
-        if((us.refresh!=refresh)||(ms!=us.ms)){
-            refresh=us.refresh;
+        if((us.refresh!=irefresh)||(ms!=us.ms)){
+            irefresh=us.refresh;
             fps=us.fps;
             ms=us.ms;
             emit changeRefresh();

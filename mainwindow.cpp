@@ -53,7 +53,7 @@ void MainWindow::changedLayout(){
 
 void MainWindow::refresh(){
     if(s->gConnected()){
-        s->getstatus();
+        s->refresh();
         ui->progressBar->setValue(0);
     }
 }
@@ -83,7 +83,7 @@ void MainWindow::everySecond(){
         ui->progressBar->setValue(ui->progressBar->value()+1);
         if(ui->progressBar->value()>=ui->progressBar->maximum()){
             ui->progressBar->setValue(0);
-            s->getstatus();
+            s->refresh();
         }
     }
 }

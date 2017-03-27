@@ -13,7 +13,7 @@ public:
 private:
     QString adress;
     int port;
-    int refresh;
+    int irefresh;
     bool connected;
     int fps;
     int ms;
