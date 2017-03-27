@@ -99,10 +99,6 @@ public:
         gridLayout[1]->setObjectName(QStringLiteral("gridLayout1"));
 
 
-
-        /****************************\/\/\*************************************/
-        //TODO:move this to statki with gridLayout0 and 1 pointer
-        //TODO:move/delete 203,204 lines
         statki = new QPushButton*[200];
 
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -121,8 +117,6 @@ public:
 
         horizontalLayout->addLayout(gridLayout[0]);
         horizontalLayout->addLayout(gridLayout[1]);
-        /****************************\/\/\*************************************/
-
 
 
         refreshpasek->addLayout(horizontalLayout, 1, 0, 1, 1);
