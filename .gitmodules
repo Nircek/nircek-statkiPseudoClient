@@ -1,0 +1,3 @@
+[submodule "qtppspc"]
+	path = qtppspc
+	url = git@github.com:Nircek/qtppspc
